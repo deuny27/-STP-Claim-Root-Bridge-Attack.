@@ -85,7 +85,7 @@ Forward Delay = 15 segundos
 - Obliga a los switches a reconverger la topología y aceptar al atacante como Root Bridge.
 
 
-# mpacto del Ataque
+# Impacto del Ataque
 
 - Reconvergencia forzada de la red
 
