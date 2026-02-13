@@ -28,7 +28,7 @@ Puede generarse interrupción del servicio.
 
 Se pueden habilitar ataques posteriores (MITM).
 
-# Tecnologías Utilizadas
+# Herramientas Utilizadas
 
 - Python 3
 
