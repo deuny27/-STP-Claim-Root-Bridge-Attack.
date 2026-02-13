@@ -60,15 +60,15 @@ El script permite modificar los siguientes valores:
 
 El script realiza las siguientes acciones:
 
-1️⃣ Obtiene la dirección MAC de la interfaz atacante.
+- Obtiene la dirección MAC de la interfaz atacante.
 
-2️⃣ Construye un Bridge ID compuesto por:
+- Construye un Bridge ID compuesto por:
 
 2 bytes de prioridad
 
 6 bytes de dirección MAC
 
-3️⃣ Crea una BPDU de configuración STP (802.1D) con:
+- Crea una BPDU de configuración STP (802.1D) con:
 
 Root ID igual al Bridge ID del atacante
 
@@ -80,6 +80,48 @@ Hello Time = 2 segundos
 
 Forward Delay = 15 segundos
 
-4️⃣ Envía continuamente BPDU cada 2 segundos (Hello Time).
+- Envía continuamente BPDU cada 2 segundos (Hello Time).
 
-5️⃣ Obliga a los switches a reconverger la topología y aceptar al atacante como Root Bridge.
+- Obliga a los switches a reconverger la topología y aceptar al atacante como Root Bridge.
+
+
+# mpacto del Ataque
+
+- Reconvergencia forzada de la red
+
+- Posible Denegación de Servicio (DoS)
+
+- Redirección del tráfico
+
+- Base para ataques Man-in-the-Middle
+
+- Inestabilidad en la infraestructura de red
+
+La red puede tardar hasta 20 segundos (Max Age) en volver a su estado original tras detener el ataque.
+
+
+# Medidas de Mitigación
+
+Para prevenir ataques STP Claim Root Bridge se recomienda:
+
+- BPDU Guard
+Deshabilita el puerto si recibe BPDU inesperadas.
+
+- Root Guard
+Evita que un puerto pueda convertirse en Root Port.
+
+- PortFast (solo en puertos de acceso)
+Reduce tiempo de convergencia y protege contra cambios indebidos.
+
+- Storm Control
+Limita tráfico excesivo.
+
+- Segmentación adecuada de la red
+
+- Monitoreo continuo de topología STP
+
+
+# Advertencia Legal
+
+Este proyecto fue desarrollado exclusivamente con fines educativos en un entorno de laboratorio controlado.
+La ejecución de este ataque en redes reales sin autorización puede constituir un delito.
